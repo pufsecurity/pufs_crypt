@@ -1,0 +1,9 @@
+[run]
+omit =
+    */__*.py
+    test/*
+    models/*
+    controllers/auth_controller.py
+    encoder.py
+    type_util.py
+    util.py

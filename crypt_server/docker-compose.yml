@@ -1,0 +1,22 @@
+version: "3"
+
+networks:
+  default:
+    driver: bridge
+
+services:
+  swagger-ui:
+    build:
+      context: ./python-flask-server/
+    image: crypt_swagger_server:${TAG}
+    container_name: crypt_swagger-ui
+
+  nginx:
+    build:
+      context: ./nginx/
+    image: nginx:${TAG}
+    container_name: crypt-nginx
+    ports:
+      - 8089:80
+    depends_on:
+      - swagger-ui

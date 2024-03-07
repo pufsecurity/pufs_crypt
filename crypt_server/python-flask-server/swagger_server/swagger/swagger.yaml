@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  title: Crypt Server API
+  description: ""
+  contact:
+    email: webadmin@pufsecurity.com
+  license:
+    name: MIT
+  version: 1.0.0
+servers:
+- url: /
+tags:
+- name: crypt
+  description: crypt api
+paths:
+  /backup:
+    post:
+      tags:
+      - crypt
+      summary: Backup data
+      description: backup data
+      operationId: backup_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/server'
+        required: true
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: "backup key {xxxx}"
+                x-content-type: application/json
+      x-openapi-router-controller: swagger_server.controllers.crypt_controller
+  /recover:
+    post:
+      tags:
+      - crypt
+      summary: Recover data
+      description: recover data
+      operationId: recover_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/server'
+        required: true
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: "recover key {xxxx}"
+                x-content-type: application/json
+      x-openapi-router-controller: swagger_server.controllers.crypt_controller
+components:
+  schemas:
+    server:
+      type: object
+      properties:
+        SERVER_IP:
+          type: string
+          example: 192.168.1.1
+

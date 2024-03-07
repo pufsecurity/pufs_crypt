@@ -1,0 +1,28 @@
+{
+  "name": "pufs_crypt",
+  "version": "1.0.0",
+  "description": "PUFsecurity encrypt or decrypt tools",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test test.js",
+    "lint": "eslint *.js **/*.js"
+  },
+  "author": "fenghuang@pufsecurity.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "bindings": "^1.5.0",
+    "commander": "^9.4.1",
+    "envfile": "^6.18.0"
+  },
+  "bin": {
+    "pufs_crypt": "index.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.0"
+  },
+  "gypfile": true
+}

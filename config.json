@@ -1,0 +1,8 @@
+{
+    "kms": {
+        "path": "./kms"
+    },
+    "api": {
+        "endpoint" : "http://[server]:8089"
+    }
+}
